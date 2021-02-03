@@ -1,0 +1,68 @@
+<div>
+    <h2>
+        <span>Casinos</span>
+        <button class="btn btn-primary float-right jh-create-entity create-casino" [routerLink]="['/', { outlets: { popup: ['casino-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Casino
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="casinos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Nombre</span></th>
+            <th><span>Direccion</span></th>
+            <th><span>Cantidad Maquinas</span></th>
+            <th><span>Maquina</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let casino of casinos ;trackBy: trackId">
+                <td><a [routerLink]="['../casino', casino.id ]">{{casino.id}}</a></td>
+                <td>{{casino.nombre}}</td>
+                <td>{{casino.direccion}}</td>
+                <td>{{casino.cantidadMaquinas}}</td>
+                <td>
+                    <div *ngIf="casino.maquina">
+                        <a [routerLink]="['../maquina', casino.maquina?.id ]" >{{casino.maquina?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../casino', casino.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'casino/'+ casino.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'casino/'+ casino.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

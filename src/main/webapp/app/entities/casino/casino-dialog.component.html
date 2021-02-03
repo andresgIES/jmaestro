@@ -1,0 +1,47 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCasinoLabel">Create or edit a Casino</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!casino.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="casino.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                [(ngModel)]="casino.nombre" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_direccion">Direccion</label>
+            <input type="text" class="form-control" name="direccion" id="field_direccion"
+                [(ngModel)]="casino.direccion" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_cantidadMaquinas">Cantidad Maquinas</label>
+            <input type="number" class="form-control" name="cantidadMaquinas" id="field_cantidadMaquinas"
+                [(ngModel)]="casino.cantidadMaquinas" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="field_maquina">Maquina</label>
+            <select class="form-control" id="field_maquina" name="maquina" [(ngModel)]="casino.maquina">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="maquinaOption.id === casino.maquina?.id ? casino.maquina : maquinaOption" *ngFor="let maquinaOption of maquinas; trackBy: trackMaquinaById">{{maquinaOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

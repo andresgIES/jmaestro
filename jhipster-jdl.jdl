@@ -1,0 +1,28 @@
+
+entity Cliente {
+	id Integer,
+    nombre String,
+    direccion String,
+    tieneCasinos Boolean
+}
+
+entity Casino {
+	id Integer,
+    nombre String,
+    direccion String,
+    cantidadMaquinas Integer
+}
+
+entity Maquina {
+	id Integer,
+    modelo String,
+    cantidadJuegos Integer
+}
+
+relationship OneToOne {
+	Cliente {casino} to Casino
+}
+
+relationship OneToOne {
+	Casino {maquina} to Maquina
+}

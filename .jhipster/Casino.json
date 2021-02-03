@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "maquina",
+            "otherEntityName": "maquina",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "casino"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cantidadMaquinas",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20210203222541",
+    "entityTableName": "casino",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

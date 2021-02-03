@@ -1,0 +1,40 @@
+
+<div *ngIf="casino">
+    <h2><span>Casino</span> {{casino.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Nombre</span></dt>
+        <dd>
+            <span>{{casino.nombre}}</span>
+        </dd>
+        <dt><span>Direccion</span></dt>
+        <dd>
+            <span>{{casino.direccion}}</span>
+        </dd>
+        <dt><span>Cantidad Maquinas</span></dt>
+        <dd>
+            <span>{{casino.cantidadMaquinas}}</span>
+        </dd>
+        <dt><span>Maquina</span></dt>
+        <dd>
+            <div *ngIf="casino.maquina">
+                <a [routerLink]="['/maquina', casino.maquina?.id]">{{casino.maquina?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'casino/'+ casino.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

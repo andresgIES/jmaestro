@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Casino.
+    -->
+    <changeSet id="20210203222541-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="maquina_id"
+                                 baseTableName="casino"
+                                 constraintName="fk_casino_maquina_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="maquina"/>
+
+    </changeSet>
+</databaseChangeLog>
