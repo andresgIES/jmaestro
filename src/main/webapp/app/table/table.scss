@@ -1,7 +1,12 @@
 td {
     padding-left: 1em;
     padding-right: 1em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
     border-radius: 5px;
     border: none;
-    display: inline-flex;
+}
+
+th {
+    align-items: center;
 }
