@@ -26,6 +26,7 @@ import {
     PageRibbonComponent,
     ErrorComponent
 } from './layouts';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
     imports: [
@@ -44,7 +45,8 @@ import {
         NavbarComponent,
         ErrorComponent,
         PageRibbonComponent,
-        FooterComponent
+        FooterComponent,
+        TableComponent
     ],
     providers: [
         ProfileService,
