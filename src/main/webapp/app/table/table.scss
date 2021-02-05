@@ -3,7 +3,7 @@ $blanco: #fffeff;
 $verdeMenta: #b7e8d3;
 $verdeMar: #118b58;
 
-td {
+@mixin espacio-campos {
     padding-left: 0.8em;
     padding-right: 0.8em;
     padding-top: 0.1em;
@@ -12,10 +12,13 @@ td {
     border: 0em;
 }
 
+td {
+    @include espacio-campos();
+}
+
 th {
+    @include espacio-campos();
     align-items: center;
-    border-radius: 1em;
-    border: 0em;
     color: $blanco;
 }
 
@@ -34,4 +37,9 @@ table {
 
 .bg-verde-oscuro {
     background-color: $verdeOscuro;
+}
+
+.bg-table {
+    background: rgb(56,180,128);
+    background: linear-gradient(291deg, rgba(56,180,128,1) 71%, rgba(16,136,85,1) 100%);
 }
