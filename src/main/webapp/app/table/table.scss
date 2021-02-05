@@ -68,3 +68,22 @@ table {
     background: rgb(56, 180, 128);
     background: linear-gradient(291deg, rgba(56, 180, 128, 1) 71%, rgba(16, 136, 85, 1) 100%);
 }
+
+.padre-centrar-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    border-radius: 1em;
+
+    h2 {
+        border: 0em;
+        margin-bottom: 0em;
+    }
+}
