@@ -3,7 +3,7 @@ $blanco: #fffeff;
 $verdeMenta: #b7e8d3;
 $verdeMar: #118b58;
 
-@mixin espacio-campos {
+@mixin border {
     padding-left: 0.8em;
     padding-right: 0.8em;
     padding-top: 0.1em;
@@ -12,13 +12,33 @@ $verdeMar: #118b58;
     border: 0em;
 }
 
+@mixin padding-y {
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+}
+
+@mixin no-padding-x {
+    padding-right: 0em;
+    padding-left: 0em;
+}
+
 td {
-    @include espacio-campos();
-    width: 100;
+    @include border();
+    @include no-padding-x();
+
+    table {
+        width: 100%;
+
+        td {
+            @include no-padding-x();
+            width: max-content;
+        }
+    }
 }
 
 th {
-    @include espacio-campos();
+    @include border();
+    @include padding-y();
     align-items: center;
     color: $blanco;
 }
@@ -45,6 +65,6 @@ table {
 }
 
 .bg-table {
-    background: rgb(56,180,128);
-    background: linear-gradient(291deg, rgba(56,180,128,1) 71%, rgba(16,136,85,1) 100%);
+    background: rgb(56, 180, 128);
+    background: linear-gradient(291deg, rgba(56, 180, 128, 1) 71%, rgba(16, 136, 85, 1) 100%);
 }
