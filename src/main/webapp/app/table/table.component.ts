@@ -9,22 +9,19 @@ export class TableComponent implements OnInit {
 
   constructor() { }
 
-  numeroLoteria = 0;
+  public numeroLoteria = 0;
+  public numeroSerie = 0;
+  public numeroFavorito = 0;
+
 
   ngOnInit() {
-    this.numeroLoteria = this.numeroAleatorioCuatroDigitos();
+    this.numeroLoteria = this.numeroAleatorio(9999, 1000);
+    this.numeroSerie = this.numeroAleatorio(999, 100);
+    this.numeroFavorito = this.numeroAleatorio(9999, 1000);
   }
 
   private numeroAleatorio(max: number, min: number) {
     return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  private numeroAleatorioCuatroDigitos(): number {
-    return this.numeroAleatorio(9999,1000);
-  }
-
-  private numeroAleatorioTresDigitos(): number{
-    return this.numeroAleatorio(999,0);
   }
 
 }
