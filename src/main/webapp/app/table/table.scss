@@ -1,12 +1,37 @@
+$verdeOscuro: #1c4946;
+$blanco: #fffeff;
+$verdeMenta: #b7e8d3;
+$verdeMar: #118b58;
+
 td {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
     padding-top: 0.1em;
     padding-bottom: 0.1em;
-    border-radius: 5px;
-    border: none;
+    border-radius: 1em;
+    border: 0em;
 }
 
 th {
     align-items: center;
+    border-radius: 1em;
+    border: 0em;
+    color: $blanco;
+}
+
+table {
+    color: inherit;
+    border-collapse: separate;
+}
+
+.bg-blanco {
+    background-color: $blanco;
+}
+
+.bg-verde-menta {
+    background-color: $verdeMenta;
+}
+
+.bg-verde-oscuro {
+    background-color: $verdeOscuro;
 }
