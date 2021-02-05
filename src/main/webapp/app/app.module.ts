@@ -13,6 +13,7 @@ import { NotificationInterceptor } from './blocks/interceptor/notification.inter
 import { JmasterSharedModule, UserRouteAccessService } from './shared';
 import { JmasterAppRoutingModule} from './app-routing.module';
 import { JmasterHomeModule } from './home/home.module';
+import { JmasterTableModule } from './table/table.module';
 import { JmasterAdminModule } from './admin/admin.module';
 import { JmasterAccountModule } from './account/account.module';
 import { JmasterEntityModule } from './entities/entity.module';
@@ -37,6 +38,7 @@ import {
         JmasterAdminModule,
         JmasterAccountModule,
         JmasterEntityModule,
+        JmasterTableModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
