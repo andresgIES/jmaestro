@@ -1,0 +1,99 @@
+$verdeOscuro: #1c4946;
+$blanco: #fffeff;
+$verdeMenta: #b7e8d3;
+$verdeMar: #118b58;
+
+@mixin border {
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    border-radius: 0.6em;
+    border: 0em;
+}
+
+@mixin padding-y {
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+}
+
+@mixin no-padding-x {
+    padding-right: 0em;
+    padding-left: 0em;
+}
+
+td {
+    @include border();
+    @include no-padding-x();
+    text-align: left;
+    text-indent: 0.8em;
+
+    table {
+        width: 100%;
+
+        td {
+            @include no-padding-x();
+            width: max-content;
+        }
+    }
+}
+
+th {
+    @include border();
+    @include padding-y();
+    align-items: center;
+    color: $blanco;
+}
+
+table {
+    color: inherit;
+    border-collapse: separate;
+
+    & {
+        width: 100%;
+    }
+}
+
+.bg-blanco {
+    background-color: $blanco;
+}
+
+.bg-verde-menta {
+    background-color: $verdeMenta;
+}
+
+.bg-verde-oscuro {
+    background-color: $verdeOscuro;
+}
+
+.bg-table {
+    background: rgb(56, 180, 128);
+    background: linear-gradient(291deg, rgba(56, 180, 128, 1) 71%, rgba(16, 136, 85, 1) 100%);
+}
+
+.padre-centrar-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    border-radius: 1em;
+
+    h2 {
+        border: 0em;
+        margin-bottom: 0em;
+    }
+}
+
+#div-mensaje {
+    width: 80%;
+}
+
+#div-sonrisa {
+    width: 10%;
+}
